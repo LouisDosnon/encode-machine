@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/encode-machine/static/css/main.f855e6bc.css",
+    "main.js": "/encode-machine/static/js/main.0e483b33.js",
+    "static/media/logo.svg": "/encode-machine/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/encode-machine/index.html",
+    "main.f855e6bc.css.map": "/encode-machine/static/css/main.f855e6bc.css.map",
+    "main.0e483b33.js.map": "/encode-machine/static/js/main.0e483b33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.0e483b33.js"
+  ]
+}
