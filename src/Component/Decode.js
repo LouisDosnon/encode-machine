@@ -2,7 +2,7 @@ import React from "react";
 import alphabet from "../data/alphabet";
 
 // eslint-disable-next-line no-undef
-class Encode extends React.Component {
+class Decode extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,20 +11,20 @@ class Encode extends React.Component {
             key3: { letter: "A", value: 1 },
             key4: { letter: "A", value: 1 },
             text: "",
-            encodeText: ""
+            decodeText: ""
         }
         this.changeKey1 = this.changeKey1.bind(this);
         this.changeKey2 = this.changeKey2.bind(this);
         this.changeKey3 = this.changeKey3.bind(this);
         this.changeKey4 = this.changeKey4.bind(this);
         this.changeText = this.changeText.bind(this);
-        this.encode = this.encode.bind(this);
+        this.decode = this.decode.bind(this);
     }
 
     render () {
         return (
             <div>
-                <h2>Encode</h2>
+                <h2>Decode</h2>
                 <select id="key1" onChange={this.changeKey1}>
                     {alphabet.map((letter) => {
                         return (<option key={"1"+letter.letter} value={JSON.stringify(letter)}>{letter.letter}</option>)
@@ -46,8 +46,8 @@ class Encode extends React.Component {
                 </select>
                 <br/>
                 <input type="text" onChange={this.changeText}/>
-                <button onClick={this.encode}>encode</button>
-                <p>{this.state.encodedText}</p>
+                <button onClick={this.decode}>decode</button>
+                <p>{this.state.decodedText}</p>
             </div>
         )
     }
@@ -92,24 +92,24 @@ class Encode extends React.Component {
         })
     }
 
-    encode() {
-        let encoded = "";
+    decode() {
+        let decoded = "";
         let key = (this.state.key1.value * this.state.key2.value)
             + (this.state.key3.value * this.state.key4.value);
         // Décalage de chaque lettre du texte
         for (let char of this.state.text) {
-            console.log(char);
             // Décalage de la lettre en fonction de la clé (shift)
             let charIndex = char.charCodeAt(0) - 65;  // Conversion de la lettre en index (A=0, B=1, ..., Z=25)
-            charIndex = (charIndex + key) % 26;  // Appliquer le décalage
-            encoded += String.fromCharCode(charIndex + 65);
+            charIndex = (charIndex - key);  // Appliquer le décalage
+            console.log(charIndex)
+            decoded += String.fromCharCode(charIndex + 65);
         }
         this.setState({
-            encodedText: encoded
+            decodedText: decoded
         }, () => {
             console.log(this.state)
         });
     }
 }
 
-export default Encode;
+export default Decode;
