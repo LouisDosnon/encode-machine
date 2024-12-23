@@ -94,13 +94,13 @@ class Decode extends React.Component {
 
     decode() {
         let decoded = "";
-        let key = (this.state.key1.value * this.state.key2.value)
-            + (this.state.key3.value * this.state.key4.value);
+        let key = 26 - ((this.state.key1.value * this.state.key2.value)
+        + (this.state.key3.value * this.state.key4.value) % 26);
         // Décalage de chaque lettre du texte
         for (let char of this.state.text) {
             // Décalage de la lettre en fonction de la clé (shift)
             let charIndex = char.charCodeAt(0) - 65;  // Conversion de la lettre en index (A=0, B=1, ..., Z=25)
-            charIndex = (charIndex - key);  // Appliquer le décalage
+            charIndex = (charIndex + key) % 26;  // Appliquer le décalage
             console.log(charIndex)
             decoded += String.fromCharCode(charIndex + 65);
         }
