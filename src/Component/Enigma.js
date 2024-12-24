@@ -31,6 +31,7 @@ class Enigma extends React.Component {
         return (
             <div>
                 <h2>Juges des Âmes Loyales Opposées à l'Ultime</h2>
+                <h3>Par la juge</h3>
                 <select id="key1" onChange={this.changeKey1}>
                     {rotor1.map((letter, index) => {
                         return (<option key={"1"+letter} value={index}>{letter}</option>)
@@ -164,7 +165,7 @@ class Enigma extends React.Component {
         index = rotor3.indexOf(String.fromCharCode(65 + index));
         index = (index - pos3 + 26) % 26;
         index = rotor2.indexOf(String.fromCharCode(65 + index));
-        index = (index - pos2 + 26) % 26;console.log(String.fromCharCode(65 + index));
+        index = (index - pos2 + 26) % 26;
         index = rotor1.indexOf(String.fromCharCode(65 + index));
         index = (index - pos1 + 26) % 26;
     
