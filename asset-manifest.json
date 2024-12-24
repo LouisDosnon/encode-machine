@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/encode-machine/static/css/main.f855e6bc.css",
-    "main.js": "/encode-machine/static/js/main.0ea61c24.js",
+    "main.js": "/encode-machine/static/js/main.30f2ab6c.js",
     "index.html": "/encode-machine/index.html",
     "main.f855e6bc.css.map": "/encode-machine/static/css/main.f855e6bc.css.map",
-    "main.0ea61c24.js.map": "/encode-machine/static/js/main.0ea61c24.js.map"
+    "main.30f2ab6c.js.map": "/encode-machine/static/js/main.30f2ab6c.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.0ea61c24.js"
+    "static/js/main.30f2ab6c.js"
   ]
 }
