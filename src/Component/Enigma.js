@@ -1,5 +1,5 @@
 import React from "react";
-import alphabet from "../data/alphabet";
+import "../style/Enigma.css";
 
 const rotor1 = ['Z', 'X', 'Y', 'V', 'T', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A', 'W', 'U', 'S'];
 const rotor2 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'L', 'K', 'J', 'H', 'G', 'F', 'D', 'S', 'A', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
@@ -30,32 +30,37 @@ class Enigma extends React.Component {
     render () {
         return (
             <div>
-                <h2>Juges des Âmes Loyales Opposées à l'Ultime</h2>
-                <h3>Par la juge</h3>
-                <select id="key1" onChange={this.changeKey1}>
-                    {rotor1.map((letter, index) => {
-                        return (<option key={"1"+letter} value={index}>{letter}</option>)
-                    })}
-                </select>
-                <select id="key2" onChange={this.changeKey2}>
-                    {rotor2.map((letter, index) => {
-                        return (<option key={"2"+letter} value={index}>{letter}</option>)
-                    })}
-                </select>
-                <select id="key3" onChange={this.changeKey3}>
-                    {rotor3.map((letter, index) => {
-                        return (<option key={"3"+letter} value={index}>{letter}</option>)
-                    })}
-                </select>
-                <select id="key4" onChange={this.changeKey4}>
-                    {rotor4.map((letter, index) => {
-                        return (<option key={"4"+letter} value={index}>{letter}</option>)
-                    })}
-                </select>
-                <br/>
-                <input type="text" onChange={this.changeText}/>
-                <button onClick={this.encode}>encode/decode</button>
-                <p>{this.state.encodedText}</p>
+                <div className="titre">
+                    <h2>Juges des Âmes Loyales Opposées à l'Ultime</h2>
+                    <h3>Par la Juge Wandrad Thorgestdottir.</h3>
+                </div>
+                <hr/>
+                <div className="machine">
+                    <select id="key1" onChange={this.changeKey1}>
+                        {rotor1.map((letter, index) => {
+                            return (<option key={"1"+letter} value={index}>{letter}</option>)
+                        })}
+                    </select>
+                    <select id="key2" onChange={this.changeKey2}>
+                        {rotor2.map((letter, index) => {
+                            return (<option key={"2"+letter} value={index}>{letter}</option>)
+                        })}
+                    </select>
+                    <select id="key3" onChange={this.changeKey3}>
+                        {rotor3.map((letter, index) => {
+                            return (<option key={"3"+letter} value={index}>{letter}</option>)
+                        })}
+                    </select>
+                    <select id="key4" onChange={this.changeKey4}>
+                        {rotor4.map((letter, index) => {
+                            return (<option key={"4"+letter} value={index}>{letter}</option>)
+                        })}
+                    </select>
+                    <br/>
+                    <input type="text" onChange={this.changeText}/>
+                    <button onClick={this.encode}>encode/decode</button>
+                    <p>{this.state.encodedText}</p>
+                </div>
             </div>
         )
     }
